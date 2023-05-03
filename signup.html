@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+        body {
+            background: rgb(8, 1, 2);
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="JavaScript/dynamically_dropdowns.js" defer></script>
+    <script src="JavaScript/validare_sign_up.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="navbar-container">
+        <a class="logo"><img src="/images/popcorn.png" alt="Logo"></a>
+        <div class="menu-container">
+            <a href="main.html" class="active" >Back to main</a>
+        </div>
+    </div>
+</header>
+<div id="error" style="color: #ff0404"><?php if(isset($error_message)) {echo $error_message;} ?></div>
+<br>
+<form action="signup.php" method="post" class="signup-form" id="signup-form">
+    <label for="email" >Email:</label>
+    <input type="text" id="email" name="email" required>
+    <span id="email-validation-icon"></span>
+
+    <label for="phone" >Phone number:</label>
+    <input type="text" id="phone" name="phone" required>
+    <span id="phone-validation-icon"></span>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="password">Confirm Password:</label>
+    <input type="password" id="confirm-password" name="password" required>
+    <span id="confirm-password-validation-icon"></span>
+
+    <label for="password">Postal code:</label>
+    <select id="city-dropdown">
+        <option value="Bucuresti">Bucuresti</option>
+        <option value="Cluj-Napoca">Cluj-Napoca</option>
+        <option value="Timisoara">Timisoara</option>
+        <option value="Iasi">Iasi</option>
+        <option value="Constanta">Constanta</option>
+        <option value="Craiova">Craiova</option>
+        <option value="Brasov">Brasov</option>
+        <option value="Galati">Galati</option>
+        <option value="Oradea">Oradea</option>
+        <option value="Ploiesti">Ploiesti</option>
+    </select>
+
+    <select id="postal-code-dropdown">
+<!--        <option value="">Select a city first</option>-->
+    </select>
+
+    <input type="submit" value="Sign Up">
+
+    <a href="login.html"><input type="button" value="Log in here"></a>
+</form>
+
+<footer>
+    <b>&copy; Andreea Moldovan :)</b>
+</footer>
+
+</body>

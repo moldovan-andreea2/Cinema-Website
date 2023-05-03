@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+        body {
+            background: rgb(8, 1, 2);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="JavaScript/validare_log_in.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="navbar-container">
+        <a class="logo"><img src="/images/popcorn.png" alt="Logo"></a>
+        <div class="menu-container">
+            <a href="main.html" class="active" >Back to main</a>
+        </div>
+    </div>
+</header>
+
+<br>
+<br>
+<h2><u>Movie Page Sign In</u></h2>
+<div id="error" style="color: #ff0404"><?php if(isset($error_message)) {echo $error_message;} ?></div>
+<form action="/" method="post" class="login-form" id="login-form">
+    <label for="email" >Email:</label>
+    <input type="text" id="email" name="email" required>
+    <span id="email-validation-icon"></span>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <input id="submit-button" type="submit" value="Sign In">
+
+    <p style="color: #75616e">
+        <s>Don't have an account?</s>
+    </p>
+    <a href="signup.html"><input type="button" value="Sign up here"></a>
+</form>
+
+<footer>
+    <b>&copy; Andreea Moldovan :)</b>
+</footer>
+
+</body>
+</html>

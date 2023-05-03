@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: rgb(8, 1, 2);
+        }
+    </style>
+    <script src="JavaScript/sidenav.js"> </script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<html>
+<body>
+
+
+
+<header>
+    <div class="navbar-container">
+        <a class="logo"><img src="/images/popcorn.png" alt="Logo"></a>
+        <div class="menu-container">
+            <a href="movie_quotes.html" class="active">Movie Quotes</a>
+            <a href="login.html" class="active">UPLOAD YOUR FAVOURITE MOVIE POSTER!</a>
+        </div>
+    </div>
+</header>
+
+<h1 style="color: #fdd783; margin-left: 400px; font-size: 60px ">Find your favourite movie! </h1>
+<div>
+    <select id="selectt" style="margin-left: 550px" >
+    </select>
+</div>
+<div class="sidebar">
+    <p><a href="main.html">
+        <img src="images/home.png" id="home-image" width="40px" height="40px">
+    </a></p>
+    <br>
+    <p><a>
+        <img src="images/burger-bar.png" id="burger-bar" width="40px" height="40px" onclick="openNav()">&#9776;>
+    </a></p>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <a href="menu.html" class="buton-home">Menu</a>
+        <a href="about_us.html" class="buton-home">About us</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var country = ["The Seventh Seal",
+            "Chungking Express",
+            "Fallen Angels",
+            "Shawshank Redemption",
+            "The Godfather",
+            "Nosferatu",
+            "Vortex",
+            "Persona",
+            "The Banshees of Inisherin",
+            "Cries and Whispers",
+            "Call Me By Your Name",
+            "Eyes Wide Shut",
+            "2001: A Space Odyssey",
+            "The Elephant Man",
+            "Wild Strawberries",
+            "Fanny and Alexander",
+            "Scenes from a Marriage",
+            "The Silence",
+            "Winter Light",
+            "Through a Glass Darkly",
+            "The Virgin Spring",
+            "Hour of the Wolf",
+            "Autumn Sonata",
+            "Shame",
+            "Persona",
+            "A Clockwork Orange",
+            "Dr. Strangelove",
+            "Full Metal Jacket",
+            "The Shining",
+            "2001: A Space Odyssey",
+            "Barry Lyndon",
+            "Eyes Wide Shut",
+            "Lolita",
+            "Paths of Glory",
+            "Spartacus",
+            "Blue Velvet",
+            "Mulholland Drive",
+            "Twin Peaks: Fire Walk With Me",
+            "Eraserhead",
+            "Lost Highway",
+            "Inland Empire",
+            "The Elephant Man",
+            "Dune",
+            "Wild at Heart",
+            "The Straight Story",
+            "The Dark Knight",
+            "Inception",
+            "Dunkirk",
+            "Interstellar",
+            "Memento",
+            "The Prestige",
+            "Batman Begins",
+            "Tenet",
+            "Following",
+            "Insomnia",
+            "Fight Club",
+            "The Social Network",
+            "Seven",
+            "Zodiac",
+            "Gone Girl",
+            "The Girl With the Dragon Tattoo",
+            "Panic Room",
+            "The Game",
+            "Alien 3",
+            "Benjamin Button",
+            'The Dark Knight', 'The Lord of the Rings: The Fellowship of the Ring', 'The Lord of the Rings: The Two Towers', 'The Lord of the Rings: The Return of the King', 'The Matrix', 'The Matrix Reloaded', 'The Matrix Revolutions', 'Forrest Gump', 'The Shawshank Redemption', 'The Silence of the Lambs', 'Pulp Fiction', 'Goodfellas', 'Fight Club', 'The Prestige', 'Memento', 'Inception', 'The Dark Knight Rises', 'Interstellar', 'Dunkirk', 'Blade Runner', 'Blade Runner 2049', 'The Social Network', 'Whiplash', 'La La Land', 'The Grand Budapest Hotel', 'The Revenant', 'Gravity', 'Children of Men', 'No Country for Old Men', 'There Will Be Blood', 'The Departed', 'Gone Girl', 'Birdman', 'The Wolf of Wall Street', 'Amélie', 'The Intouchables', 'The Lives of Others', 'Oldboy', 'Memories of Murder', 'The Handmaiden', 'City of God', 'The Hunt', 'The Raid: Redemption', 'The Raid 2', 'Mad Max: Fury Road', 'Logan', 'The Incredibles', 'Up', 'Ratatouille', 'Inside Out'
+        ];
+        $("#selectt").select2({
+            data: country
+        });
+    });
+</script>
+<script>
+    document.getElementById("selectt").addEventListener("change", function() {
+        var selectedOption = this.options[this.selectedIndex].value;
+        Swal.fire({
+            title: "You found " + selectedOption
+        })
+    });
+</script>
+<footer style="margin-top: 305px">
+    <b>&copy; Andreea Moldovan :)</b>
+</footer>
+

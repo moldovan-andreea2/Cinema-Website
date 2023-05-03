@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Quotes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: rgb(8, 1, 2);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="navbar-container">
+        <a class="logo"><img src="/images/popcorn.png" alt="Logo"></a>
+        <div class="menu-container">
+            <a href="main.html" class="active" >Back to main</a>
+            <a href="login.html" class="active">UPLOAD YOUR FAVOURITE MOVIE POSTER!</a>
+        </div>
+    </div>
+</header>
+
+<ol id="imageList">
+    <li>
+        <img src="movie_quotes_images/q2.jpg" alt="Image 1">
+    </li>
+    <li>
+        <img src="movie_quotes_images/q3.jpg" alt="Image 2">
+    </li>
+    <button id="viewMoreBtn">CLICK ME :)</button>
+</ol>
+
+
+<script>
+    const viewMoreBtn = document.getElementById("viewMoreBtn");
+    const imageList = document.getElementById("imageList");
+    const images = ["movie_quotes_images/q1.jpg", "movie_quotes_images/q5.jpg", "movie_quotes_images/q2.jpg", "movie_quotes_images/q3.jpg", "movie_quotes_images/q4.jpg", "movie_quotes_images/q6.jpg"];
+
+    let currentIndex = 0; // starting index for showing additional images
+
+    viewMoreBtn.addEventListener("click", () => {
+        for (let i = currentIndex; i < images.length; i++) {
+            const li = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = images[i];
+            img.alt = "Image " + (i + 1);
+            li.appendChild(img);
+            imageList.insertBefore(li, viewMoreBtn);
+        }
+        currentIndex = images.length; // update the current index
+        viewMoreBtn.style.display = "none"; // hide the "View More" button
+    });
+</script>
+
+<footer>
+    <b>&copy; Andreea Moldovan :)</b>
+</footer>
+
+</body>
+
+</html>

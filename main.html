@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+            rel="stylesheet">
+    <style>
+        body {
+            background: #050404;
+        }
+    </style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="JavaScript/movement_main.js"></script>
+    <script src="JavaScript/sidenav.js"></script>
+
+    <title>Popcorn Cinema :) Main page</title>
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+                <a class="logo"><img src="/images/popcorn.png" alt="Logo"></a>
+                <h1>CINEMA POPCORN TIME</h1>
+            <div class="menu-container">
+                <a href="movie_quotes.html" class="active">Movie Quotes</a>
+                <a href="login.html" class="active">UPLOAD YOUR FAVOURITE MOVIE POSTER!</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <p><a href="main.html">
+            <img src="images/home.png" alt="/" id="home-image" width="40" height="40">
+        </a></p>
+        <br>
+        <p><a>
+            <img src="images/burger-bar.png" alt="/" id="burger-bar" width="40" height="40" onclick="openNav()">&#9776;>
+        </a></p>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="find.html" class="buton-home">Find Movie</a>
+            <a href="menu.html" class="buton-home">Menu</a>
+            <a href="about_us.html" class="buton-home">About us</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-container">
+            <div class="featured-content" style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('images/odiss.jpg');
+            background-size: 100% 100%;">
+                <img class="featured-title"  style="width: 30%" src="images/2001.png" alt="">
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">CLASSIC FILMS</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/5.jpg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/6.jpg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/3.jpg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/7.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">OUR RECOMMENDATIONS</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/call.jpg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/rew.jpg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/2.jpeg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/1.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-content" style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('images/anderson.jpg');
+            background-size: 100% 100%;">
+                <img style="margin-left: 700px; width: 50%" class="featured-title" src="images/grand.png" alt="">
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">BEST FOREIGN MOVIES</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/8.jpg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/leave.jpg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/ck.jpeg" alt="">
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/old.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">DRAMA</h1>
+                <div class="movie-list-wrapper">
+                <div class="movie-list">
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="images/ld1.jpg" alt="">
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="images/Id2.jpeg" alt="">
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="images/ld3.jpeg" alt="">
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="images/www.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="image_popup">
+        <button class="close-btn">X</button> <!-- close btn -->
+        <img id="large-image" src="images/f-1.jpg" alt=""> <!-- popup image -->
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $(".movie-list-item").click(function (){
+                var path = $(this).closest(".movie-list-item").find(".movie-list-item-img").attr("src");
+                $("#large-image").attr('src',path);
+                $("#image_popup").show();
+            });
+
+            $(".close-btn").click(function (){
+                $("#image_popup").hide();
+            });
+        });
+    </script>
+    <footer>
+        <b>&copy; Andreea Moldovan :)</b>
+    </footer>
+
+
+</body>
+</html>

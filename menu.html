@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: rgb(8, 1, 2);
+        }
+    </style>
+    <script src="JavaScript/sidenav.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="navbar-container">
+        <a class="logo"><img src="/images/popcorn.png" alt="Logo"></a>
+        <div class="menu-container">
+            <a href="movie_quotes.html" class="active">Movie Quotes</a>
+            <a href="login.html" class="active">UPLOAD YOUR FAVOURITE MOVIE POSTER!</a>
+        </div>
+    </div>
+</header>
+<div class="sidebar">
+    <p><a href="main.html">
+        <img src="images/home.png" id="home-image" width="40" height="40" alt="/">
+    </a></p>
+    <br>
+    <p><a>
+        <img src="images/burger-bar.png" id="burger-bar" width="40" height="40" onclick="openNav()" alt="/">&#9776;>
+    </a></p>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="about_us.html" class="buton-home">About Us</a>
+        <a href="find.html" class="buton-home">Find Movie</a>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        // Search function
+        $("#search").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+
+            $("table tbody tr").each(function (index) {
+                var found = false;
+                $(this).each(function () {
+                    var cellText = $(this).text().toLowerCase();
+                    if (cellText.indexOf(value) !== -1) {
+                        found = true;
+                        return false; // break out of the inner loop
+                    }
+                });
+                if (found) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+
+
+        // Sort function
+        $('th').each(function (col) {
+            $(this).click(function () {
+                var sort_direction = $(this).hasClass('sort-asc') ? 'desc' : 'asc';
+                var rows = $('table tbody tr').get();
+                rows.sort(function (a, b) {
+                    var A = $(a).children('td').eq(col).text().toUpperCase();
+                    var B = $(b).children('td').eq(col).text().toUpperCase();
+                    if (A < B) {
+                        return sort_direction === 'asc' ? -1 : 1;
+                    }
+                    if (A > B) {
+                        return sort_direction === 'asc' ? 1 : -1;
+                    }
+                    return 0;
+                });
+                $.each(rows, function (index, row) {
+                    $('table tbody').append(row);
+                });
+                $('th').removeClass('sort-asc sort-desc');
+                $(this).addClass('sort-' + sort_direction);
+            });
+        });
+    });
+
+</script>
+<label for="search"></label><input style="margin-left: 400px;width: 14%" type="text" id="search" placeholder="  live search">
+<table style="margin-left: 400px">
+    <thead>
+    <tr>
+        <th>Menu Item <span class="sort-icon"></span></th>
+        <th>Description <span class="sort-icon"></span></th>
+        <th>Price <span class="sort-icon"></span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Popcorn</td>
+        <td>Freshly popped corn kernels seasoned with salt and butter</td>
+        <td>$5.00</td>
+    </tr>
+    <tr>
+        <td>Soda</td>
+        <td>A cold, carbonated drink in various flavors</td>
+        <td>$3.50</td>
+    </tr>
+    <tr>
+        <td>Candy</td>
+        <td>Assorted chocolates and candies</td>
+        <td>$4.00</td>
+    </tr>
+    <tr>
+        <td>Hot dog</td>
+        <td>A grilled sausage served in a bun with condiments</td>
+        <td>$6.00</td>
+    </tr>
+    <tr>
+        <td>Nachos</td>
+        <td>Crispy tortilla chips served with melted cheese, jalapeño peppers, and salsa</td>
+        <td>$7.50</td>
+    </tr>
+    <tr>
+        <td>Pretzel</td>
+        <td>A warm soft pretzel served with mustard or cheese sauce</td>
+        <td>$4.50</td>
+    </tr>
+    <tr>
+        <td>Ice Cream</td>
+        <td>Vanilla or chocolate ice cream with various toppings available</td>
+        <td>$5.00</td>
+    </tr>
+    <tr>
+        <td>Chicken Tenders</td>
+        <td>Crispy breaded chicken strips served with dipping sauce</td>
+        <td>$8.00</td>
+    </tr>
+    <tr>
+        <td>Beer</td>
+        <td>A selection of beers on tap or in bottles</td>
+        <td>$7.00</td>
+    </tr>
+    <tr>
+        <td>Wine</td>
+        <td>Red or white wine by the glass or bottle</td>
+        <td>$9.00</td>
+    </tr>
+    <tr>
+        <td>Chips and Salsa</td>
+        <td>Crispy tortilla chips served with salsa</td>
+        <td>$3.50</td>
+    </tr>
+    <tr>
+        <td>Cheeseburger</td>
+        <td>A classic beef patty with melted cheese, lettuce, tomato, and condiments on a bun</td>
+        <td>$9.00</td>
+    </tr>
+    <tr>
+        <td>Vegetarian Burger</td>
+        <td>A plant-based burger patty with lettuce, tomato, and condiments on a bun</td>
+        <td>$10.00</td>
+    </tr>
+    <tr>
+        <td>French Fries</td>
+        <td>Crispy fried potato sticks seasoned with salt</td>
+        <td>$4.00</td>
+    </tr>
+    <tr>
+        <td>Onion Rings</td>
+        <td>Crispy breaded onion rings</td>
+        <td>$5.00</td>
+    </tr>
+    <tr>
+        <td>Cheese Dip</td>
+        <td>Melted cheese dip served with tortilla chips</td>
+        <td>$6.00</td>
+    </tr>
+    <tr>
+        <td>Soft Drink</td>
+        <td>A variety of soft drinks and juices</td>
+        <td>$3.00</td>
+    </tr>
+    <tr>
+        <td>Hot Chocolate</td>
+        <td>Warm, rich chocolate drink topped with whipped cream</td>
+        <td>$4.50</td>
+    </tr>
+    <tr>
+        <td>Cappuccino</td>
+        <td>A coffee drink made with espresso and steamed milk, topped with foam</td>
+        <td>$5.00</td>
+    </tr>
+    <tr>
+        <td>Tea</td>
+        <td>A variety of teas available</td>
+        <td>$3.50</td>
+    </tr>
+    </tbody>
+</table>
+<footer style="margin-top: 500px">
+    <b>&copy; Andreea Moldovan :)</b>
+</footer>
+</body>
+</html>

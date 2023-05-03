@@ -1,0 +1,675 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+}
+.navbar-container {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+.logo-container {
+    flex: 1;
+}
+header a {
+    float: left;
+    color: #a25353;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 20px;
+    border-radius: 30px;
+    padding: 15px;
+}
+a.active {
+    color: #a25353;
+}
+header a.logo :hover{
+    transform: rotate(360deg);
+}
+
+header a.active:hover {
+    background-color: rgba(103, 48, 48, 0.37);
+    color: rgba(240, 241, 243, 0.63);
+}
+
+header a.logo {
+    display: inline-block;
+    margin-right: 20px; /* Add some spacing between logo and links */
+}
+
+/* Style the logo image */
+header a.logo img {
+    max-height: 10px; /* Adjust this value to fit your logo size */
+}
+
+header a.logo img {
+    max-height: 50px; /* Adjust this value to fit your logo size */
+    transition: transform 0.5s ease; /* Add a transition effect to the transform property */
+}
+
+/* Rotate the logo on click */
+header a.logo img:hover {
+    transform: rotate(360deg); /* Rotate the image 360 degrees on hover */
+}
+header {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    background-image: linear-gradient(to right, rgb(56, 8, 16), rgb(0, 0, 0));
+}
+.logo {
+    margin-top: 3px;
+    margin-left: 20px;
+    color: #75616e;
+}
+
+.sidebar {
+    width: 50px;
+    height: 100%;
+    background-image: linear-gradient(to right, rgb(2, 0, 0), rgb(56, 8, 16));
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.left-menu-icon {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#burger-bar:hover{
+    cursor: pointer;
+    opacity: 0.3;
+}
+#home-image:hover{
+    cursor: pointer;
+    opacity: 0.3;
+}
+.buton-home{
+
+}
+
+/*PARTEA DE MOVIE LIST CONTAINER CARE LE ASEAZA FRUMOS :)*/
+
+.container {
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color: white;
+}
+
+.content-container {
+    margin-left: 50px;
+}
+
+.featured-content {
+    height: 50vh;
+    padding: 50px;
+}
+.featured-title {
+    width: 200px;
+}
+.featured-description{
+    width: 500px;
+    color: rgba(211, 211, 211, 0.39);
+    margin: 30px 0;
+    font-family: "Roboto Light", serif;
+}
+.featured-button {
+    background-color: #1a001a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.movie-list-container {
+    padding: 0 20px;
+}
+
+.movie-list-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-list {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+}
+
+.movie-list-item {
+    margin-right: 30px;
+    position: relative;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.movie-list-item-img {
+    transition: all 0.7s ease-in-out;
+    width: 325px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.movie-list-item-title {
+    background-color: #333;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-desc {
+    background-color: #333;
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    width: 230px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-button {
+    padding: 10px;
+    background-color: #4dbf00;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.arrow {
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    color: #f8e5e5;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.container.active {
+    background-color: white;
+}
+
+.movie-list-title.active {
+    color: black;
+}
+
+
+
+footer {
+    background-color: #b97b7b;
+    clear: both;
+    position: relative;
+    height: 20px;
+    margin-top: -20px;
+    color: #230428;
+
+}
+
+
+/*popup*/
+#show_image_popup{
+    position: absolute; /*  so that not take place   */
+    top: 50%;
+    left: 50%;
+    z-index: 1000; /*  adobe all elements   */
+    transform: translate(-50%, -50%); /*  make center   */
+
+    display: none; /*  to hide first time   */
+}
+#show_image_popup img{
+    max-width: 90%;
+    height: auto;
+}
+#all-images{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#all-images li{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+#all-images li img{
+    width: 100px;
+    height: 100px;
+}
+#image_popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 999;
+    text-align: center;
+}
+
+#image_popup #large-image {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 5%;
+}
+
+#large-image {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+#large-image:hover {
+    transform: scale(1.1);
+}
+.close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.sidenav {
+    height: 150px;
+    width: 0;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    background-color: #2d080f;
+    overflow-x: hidden;
+    transition: 0.7s;
+    padding-top: 30px;
+}
+
+.sidenav a {
+    padding: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 10px;
+}
+
+
+/*LOGIN PAGE*/
+h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #75616e;
+}
+
+/* Sign in form */
+.login-form {
+    width: 400px;
+    height: 430px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #262626;
+    border-radius: 10px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 20px 15px 20px 17px;
+    background-color: #5b4145;
+    color: #d0c0c0;
+}
+.login-form label {
+    display: block;
+    font-family: 'Poppins',sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fdd783;
+    margin-bottom: 5px;
+}
+
+input[type="submit"] {
+    width: 60%;
+    background-color: #ff2d55;
+    color: white;
+    padding: 10px;
+    margin: 40px 15px 20px 17px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: #731528;
+}
+
+.login-form input[type="button"] {
+    background-color: #77c9e8;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+}
+.login-form input[type="button"]:hover{
+    background-color: #345564;
+    cursor: pointer;
+}
+#email-validation-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    background-size: contain;
+}
+
+.valid-email {
+    background-image: url('images/tick.png');
+}
+
+.invalid-email {
+    background-image: url('images/close.png');
+}
+
+/* Sign up form */
+.signup-form {
+    width: 500px;
+    height: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #262626;
+    border-radius: 10px;
+    position: relative;
+}
+.signup-form label {
+    display: block;
+    font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fdd783;
+    margin-bottom: 5px;
+}
+
+.signup-form input[type="button"] {
+    background-color: #77c9e8;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+}
+.signup-form input[type="button"]:hover{
+    background-color: #345564;
+    cursor: pointer;
+}
+#selectt {
+    width: 30%;
+    margin: 20px 15px 200px 17px;
+    appearance: none;
+    background-color: #5b4145;
+    border: 3px solid #2d2a2a;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    color: #d0c0c0;
+    outline: none;
+}
+
+#selectt:focus {
+    border-color: #460c16;
+    box-shadow: 0 0 3px rgb(65, 13, 65);
+}
+#confirm-password-validation-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    background-size: contain;
+}
+
+#phone-validation-icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    background-size: contain;
+}
+
+/*Pagina de MOVIE QUOTES*/
+
+#imageList li {
+    display: inline-block;
+    padding: 20px;
+}
+#imageList li:hover{
+    opacity: 0.5;
+}
+#imageList li img {
+    transition: all 1s ease-in-out;
+    width: 600px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+#viewMoreBtn {
+    display: block;
+    margin-top: 10px;
+}
+#viewMoreBtn{
+    border-radius: 300px;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 25px;
+    padding: 30px;
+    background-color: #e87777;
+    font-family: Roboto,serif;
+}
+#viewMoreBtn:hover{
+    cursor: pointer;
+    border-radius: 3px;
+    border-color: #9f40a6;
+    background-color: rgba(232, 119, 119, 0.98);
+    color: #f1f1f1;
+}
+
+.aboutus-paragraph{
+    font-family: Roboto,serif;
+    font-size: 30px;
+    color: rgba(240, 241, 243, 0.59);
+    margin-left: 60px;
+}
+
+
+
+
+.galleryy-img{
+    transition: all 0.7s ease-in-out;
+    width: 500px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-left: 150px;
+}
+
+
+
+.delete_user_table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1070px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+}
+
+th {
+    background-color: #a594a9;
+    text-align: left;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #410d41;
+    padding: 10px;
+    background-color: rgba(240, 241, 243, 0.63);
+}
+#a_see_users{
+    display: block;
+    width: 80%;
+    padding: 10px;
+    background-color: #7b9af5;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#a_see_users:hover{
+    background-color: #4f73c3;
+    cursor: pointer;
+}
+.swal2-container {
+    background-color: #fbd682 !important;
+}
+
+ #table1 {
+     border-collapse: collapse;
+     width: 80%;
+     margin-left: 150px;
+     margin-bottom: 40px;
+ }
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+th[colspan="2"] {
+    text-align: center;
+}
+td[rowspan="2"] {
+    vertical-align: middle;
+}
+#table2 {
+    margin-bottom: 60px;
+    margin-left: 150px;
+    border-collapse: collapse;
+    width: 70%;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.list-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.list-item img {
+    width: 50px;
+    height: 50px;
+    margin-left: 60px;
+}
+.list-item .movie-details {
+    display: flex;
+    flex-direction: column;
+}
+.list-item .movie-details h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.list-item .movie-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #e1d9d9;
+}
+.list-item ul {
+    margin-left: 60px;
+}
+.list-item li {
+    padding: 5px 0;
+    color: #e07373;
+}
+.list-item li span {
+    font-weight: 500;
+    color: #d5d2d2;
+    margin-right: 10px;
+}
+
+
